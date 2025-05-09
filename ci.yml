@@ -1,0 +1,30 @@
+name: Continuous Integration (CI)
+
+# Déclenche le workflow lors de chaque push sur la branche 'main'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Utilise une image Ubuntu pour exécuter les tests
+
+    steps:
+      # Étape 1 : Récupérer le code source
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Étape 2 : Installer Node.js (ou l'environnement nécessaire pour ton projet)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Spécifie la version de Node.js que tu veux utiliser
+
+      # Étape 3 : Installer les dépendances
+      - name: Install dependencies
+        run: npm install  # Remplace par la commande appropriée si tu utilises Python ou autre
+
+      # Étape 4 : Exécuter les tests unitaires
+      - name: Run tests
+        run: npm test  # Remplace par la commande qui exécute tes tests
