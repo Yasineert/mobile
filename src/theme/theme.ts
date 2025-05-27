@@ -93,6 +93,13 @@ interface Color {
   transparent: string;
   white: string;
   black: string;
+  
+  // Additional colors for auth screens
+  dark: string;
+  gray: string;
+  darkGray: string;
+  lightGray: string;
+  light: string;
 
   // Navigator
   Navigator: {
@@ -178,6 +185,13 @@ export const COLORS: Color = {
   transparent: 'transparent',
   white: '#FFFFFF',
   black: '#000000',
+  
+  // Additional colors for auth screens
+  dark: '#353535',
+  gray: '#6C757D',
+  darkGray: '#495057',
+  lightGray: '#E1E4E8',
+  light: '#F8F9FA',
 
   // Navigator
   Navigator: {
